@@ -2,19 +2,24 @@ package tarea_6;
 
 import Modelo.Datos;
 import arbol.SimuladorArbolBinario;
-import javax.swing.JPanel;
-
+import java.awt.Color;
+import java.io.*;
+import javax.swing.*;
+import java.sql.*;
 
 public class FrmVentanaPrincipal extends javax.swing.JFrame {
+
     private SimuladorArbolBinario simuladorBinario; // Árbol binario
     private SimuladorArbolBinario simuladorAVL;     // Árbol AVL 
     private Datos datos;
 
-
     public FrmVentanaPrincipal() {
         initComponents();
-        simuladorBinario = new SimuladorArbolBinario(); 
-        simuladorAVL = new SimuladorArbolBinario();    
+        simuladorBinario = new SimuladorArbolBinario();
+        simuladorAVL = new SimuladorArbolBinario();
+        txaNumeros.setEditable(false);
+        txaNumeros.setBackground(Color.WHITE);
+        txaNumeros.setForeground(Color.BLACK);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,13 +31,16 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         panelAVL = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         srcollBinario1 = new javax.swing.JScrollPane();
         panelBinario1 = new javax.swing.JPanel();
         btnstart = new javax.swing.JButton();
         btnstop = new javax.swing.JButton();
         txtcantidad = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaNumeros = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        btnTXT = new javax.swing.JButton();
+        btnDB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,18 +66,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 380, 190));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Numeros"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 380, 190));
 
         javax.swing.GroupLayout panelBinario1Layout = new javax.swing.GroupLayout(panelBinario1);
         panelBinario1.setLayout(panelBinario1Layout);
@@ -103,6 +99,31 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jPanel1.add(btnstop, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 120, 50));
         jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 120, -1));
 
+        txaNumeros.setColumns(20);
+        txaNumeros.setRows(5);
+        jScrollPane1.setViewportView(txaNumeros);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 430, 200));
+
+        jLabel1.setText("Números:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        btnTXT.setText("Subir TXT");
+        btnTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTXTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 90, 30));
+
+        btnDB.setText("Cargar DB");
+        btnDB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 110, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,20 +132,102 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnstartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartActionPerformed
-        
+
     }//GEN-LAST:event_btnstartActionPerformed
 
     private void btnstopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstopActionPerformed
-        
+
     }//GEN-LAST:event_btnstopActionPerformed
 
+    private void btnTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTXTActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Seleccionar archivo TXT");
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos de texto (*.txt)", "txt"));
+
+        int seleccion = fileChooser.showOpenDialog(this);
+
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File archivo = fileChooser.getSelectedFile();
+
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                StringBuilder contenido = new StringBuilder();
+
+                while ((linea = br.readLine()) != null) {
+                    contenido.append(linea).append("\n");
+                }
+
+                txaNumeros.setText(contenido.toString());
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnTXTActionPerformed
+
+    private void btnDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBActionPerformed
+        // TODO add your handling code here:
+        // Método para solicitar datos obligatorios
+        String host = solicitarDato("Ingrese el HOST:");
+        String puerto = solicitarDato("Ingrese el PUERTO:");
+        String user = solicitarDato("Ingrese el USER:");
+        String password = solicitarDato("Ingrese el PASSWORD:");
+        String nombreBD = solicitarDato("Ingrese el Nombre de la BD:");
+        String nombreTabla = solicitarDato("Ingrese el Nombre de la Tabla:");
+        String nombreColumna = solicitarDato("Ingrese el Nombre de la Columna:");
+
+        // Construimos la URL de conexión
+        String url = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD;
+
+        try {
+            // Intentamos conectar a la base de datos
+            Connection con = DriverManager.getConnection(url, user, password);
+            JOptionPane.showMessageDialog(this, "CONEXIÓN EXITOSA", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+            // Ejecutamos la consulta para obtener los datos de la columna
+            String query = "SELECT " + nombreColumna + " FROM " + nombreTabla;
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            // Construimos el texto para el JTextArea
+            StringBuilder datos = new StringBuilder();
+            while (rs.next()) {
+                datos.append(rs.getString(1)).append("\n");
+            }
+
+            // Mostramos los datos en el JTextArea
+            txaNumeros.setText(datos.toString());
+
+            // Cerramos la conexión
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al conectar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDBActionPerformed
+
+    // Método para solicitar datos y evitar valores vacíos
+    private String solicitarDato(String mensaje) {
+        String dato;
+        do {
+            dato = JOptionPane.showInputDialog(null, mensaje, "Conexión a la Base de Datos", JOptionPane.QUESTION_MESSAGE);
+            if (dato == null || dato.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Este campo es obligatorio. Intente de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } while (dato == null || dato.trim().isEmpty());
+        return dato;
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -159,17 +262,20 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDB;
+    private javax.swing.JButton btnTXT;
     private javax.swing.JButton btnstart;
     private javax.swing.JButton btnstop;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
     private javax.swing.JScrollPane srcollAVL;
     private javax.swing.JScrollPane srcollBinario1;
+    private javax.swing.JTextArea txaNumeros;
     private javax.swing.JTextField txtcantidad;
     // End of variables declaration//GEN-END:variables
 }
