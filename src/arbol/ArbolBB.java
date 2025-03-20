@@ -6,7 +6,7 @@ import javax.swing.JScrollPane;
 
 public class ArbolBB {
 
-    private Nodo raiz;
+    Nodo raiz;
 
     public ArbolBB() {
         raiz = null;
