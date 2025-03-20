@@ -130,4 +130,5 @@ public class SimuladorArbolBinario {
     public int obtenerTamanioArbol() {
         return this.miArbol.obtenerTamanio();
     }
+   
 }
