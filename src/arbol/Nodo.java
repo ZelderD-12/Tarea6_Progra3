@@ -1,16 +1,20 @@
 package arbol;
 
-
 public class Nodo {
-    private int dato;
-    private Nodo izq,der;
+    private int dato;       // Valor almacenado en el nodo
+    private Nodo izq;       // Referencia al hijo izquierdo
+    private Nodo der;       // Referencia al hijo derecho
+    private int altura;     // Altura del nodo
 
-    public Nodo(int dato, Nodo izq, Nodo der) {
+    // Constructor para crear un nodo con un dato específico
+    public Nodo(int dato) {
         this.dato = dato;
-        this.izq = izq;
-        this.der = der;
+        this.izq = null;
+        this.der = null;
+        this.altura = 1;    // La altura inicial de un nodo es 1
     }
 
+    // Getters y setters
     public int getDato() {
         return dato;
     }
@@ -34,5 +38,12 @@ public class Nodo {
     public void setDer(Nodo der) {
         this.der = der;
     }
- 
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
 }
