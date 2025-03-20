@@ -7,13 +7,7 @@ import java.io.*;
 
 public class BitacoraAplicación {
 
-    public static void agregaraccion(String mensaje) {
-        
-        File archivo;
-        FileWriter escritor;
-        PrintWriter linea;
-        archivo = new File("./Bitacora_de_Aplicacion/Bitacora.txt");
-        
+    public static void agregaraccion(String mensaje) { 
         // Obtener la fecha y hora actual
         LocalDateTime actual = LocalDateTime.now();
         
@@ -63,12 +57,18 @@ public class BitacoraAplicación {
         
         String nuevalinea = PAISARREGLADO+actual.format(formato) + " " + mensaje;
         
+        
+        File archivo;
+        FileWriter escritor;
+        PrintWriter linea;
+        archivo = new File("./Bitacora_de_Aplicacion/Bitacora.txt");
         if (!archivo.exists()) {
             try {
                 archivo.createNewFile();
                 escritor = new FileWriter(archivo, true);
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
+                linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
                 linea.close();
                 escritor.close();
@@ -80,7 +80,6 @@ public class BitacoraAplicación {
                 escritor = new FileWriter(archivo, true);
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
-                linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
                 linea.close();
                 escritor.close();
