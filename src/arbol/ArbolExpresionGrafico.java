@@ -132,4 +132,12 @@ public class ArbolExpresionGrafico extends JPanel {
 
         return new Rectangle(0, 0, width, height);
     }
+
+    // Método para desplazar el JScrollPane a la posición de un nodo
+    public void desplazarANodo(Nodo nodo) {
+        if (nodo != null && posicionNodos.containsKey(nodo)) {
+            Rectangle rect = posicionNodos.get(nodo);
+            scrollPane.getViewport().scrollRectToVisible(rect);
+        }
+    }
 }
