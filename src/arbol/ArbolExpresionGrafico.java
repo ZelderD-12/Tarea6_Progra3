@@ -38,10 +38,11 @@ public class ArbolExpresionGrafico extends JPanel {
             dirty = false;
         }
 
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.translate(getWidth() / 2, parent2child);
-        dibujarArbol(g2d, miArbol.getRaiz(), Integer.MAX_VALUE, Integer.MAX_VALUE, fm.getLeading() + fm.getAscent());
-        fm = null;
+        if (miArbol.getRaiz() != null) {
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.translate(getWidth() / 2, parent2child);
+            dibujarArbol(g2d, miArbol.getRaiz(), Integer.MAX_VALUE, Integer.MAX_VALUE, fm.getLeading() + fm.getAscent());
+        }
     }
 
     private void calcularPosiciones() {
@@ -56,6 +57,11 @@ public class ArbolExpresionGrafico extends JPanel {
 
     private Dimension calcularTamañoSubarbol(Nodo n) {
         if (n == null) return new Dimension(0, 0);
+
+        // Asegurarse de que fm esté inicializado
+        if (fm == null) {
+            return new Dimension(0, 0);
+        }
 
         Dimension ld = calcularTamañoSubarbol(n.getIzq());
         Dimension rd = calcularTamañoSubarbol(n.getDer());
@@ -94,6 +100,8 @@ public class ArbolExpresionGrafico extends JPanel {
         if (n == null) return;
 
         Rectangle r = posicionNodos.get(n);
+        if (r == null) return; // Si no hay posición, no dibujar
+
         g.draw(r);
         g.drawString(n.getDato() + "", r.x + 3, r.y + yoffs);
 
@@ -131,5 +139,13 @@ public class ArbolExpresionGrafico extends JPanel {
         int height = Math.max(leftBounds.height, rightBounds.height) + 50; // Espacio vertical
 
         return new Rectangle(0, 0, width, height);
+    }
+
+    // Método para desplazar el JScrollPane a la posición de un nodo
+    public void desplazarANodo(Nodo nodo) {
+        if (nodo != null && posicionNodos.containsKey(nodo)) {
+            Rectangle rect = posicionNodos.get(nodo);
+            scrollPane.getViewport().scrollRectToVisible(rect);
+        }
     }
 }
