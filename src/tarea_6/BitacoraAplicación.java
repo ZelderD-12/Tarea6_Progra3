@@ -80,6 +80,7 @@ public class BitacoraAplicación {
                 escritor = new FileWriter(archivo, true);
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
+                linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
                 linea.close();
                 escritor.close();
