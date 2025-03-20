@@ -1,17 +1,20 @@
 package tarea_6;
 
-import Modelo.Datos;
+
 import arbol.SimuladorArbolBinario;
 import java.awt.Color;
 import java.io.*;
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     private SimuladorArbolBinario simuladorBinario; // Árbol binario
     private SimuladorArbolBinario simuladorAVL;     // Árbol AVL 
-    private Datos datos;
+    private ArrayList<Integer> numeros;
+    private Control controlador; // Controlador para manejar el hilo
+
 
     public FrmVentanaPrincipal() {
         initComponents();
@@ -21,7 +24,28 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
     }
+    
+    private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        String texto = textArea.getText(); // Obtiene el texto del TextArea
 
+        // Divide el texto en partes usando espacios, comas o saltos de línea como separadores
+        String[] partes = texto.split("[\\s,\n]+");
+
+        // Recorre las partes y convierte a números enteros
+        for (String parte : partes) {
+            try {
+                int numero = Integer.parseInt(parte.trim()); // Convierte a entero
+                numeros.add(numero); // Agrega el número al ArrayList
+            } catch (NumberFormatException e) {
+                // Ignora partes que no sean números
+                System.out.println("Parte no válida: " + parte);
+            }
+        }
+
+        return numeros;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -65,7 +89,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 380, 190));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 380, 190));
 
         javax.swing.GroupLayout panelBinario1Layout = new javax.swing.GroupLayout(panelBinario1);
         panelBinario1.setLayout(panelBinario1Layout);
@@ -114,7 +138,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnTXTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 90, 30));
+        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 110, 40));
 
         btnDB.setText("Cargar DB");
         btnDB.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +146,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnDBActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 110, 40));
+        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,11 +165,18 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnstartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartActionPerformed
-
+         numeros = leerNumerosDeTextArea(txaNumeros); 
+        if (controlador != null && controlador.isAlive()) {
+            controlador.detener(); 
+        }
+        controlador = new Control(numeros, srcollAVL, panelAVL,srcollBinario1,panelBinario1); 
+        controlador.start(); 
     }//GEN-LAST:event_btnstartActionPerformed
 
     private void btnstopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstopActionPerformed
-
+        if (controlador != null) {
+            controlador.detener(); // Detiene el hilo
+        }
     }//GEN-LAST:event_btnstopActionPerformed
 
     private void btnTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTXTActionPerformed

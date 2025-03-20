@@ -310,7 +310,10 @@ public class ArbolBB {
     return null;
 }
     // En la clase ArbolBB
-public int obtenerTamanio() {
+    public int obtenerTamanio() {
     return inOrden().size(); // Retorna el tamaño del recorrido InOrden
-}
+    }
+    public boolean estaVacio() {
+        return this.raiz == null;
+    }
 }
