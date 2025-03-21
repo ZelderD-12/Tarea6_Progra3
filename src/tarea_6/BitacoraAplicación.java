@@ -4,15 +4,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.*;
 
 public class BitacoraAplicación {
-
-    public static void agregaraccion(String mensaje) { 
+    
+    public static void agregaraccion(String mensaje, JTextArea txa) { 
         // Obtener la fecha y hora actual
         LocalDateTime actual = LocalDateTime.now();
         
         // Definir el formato deseado
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("'| 'yyyy-MM-dd '| 'HH:mm:ss '| '");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("'| 'dd-MM-yyyy '| 'HH:mm:ss '| '");
         
         // Obtener el país o la región desde el sistema
         String pais = Locale.getDefault().getDisplayCountry();
@@ -57,7 +60,6 @@ public class BitacoraAplicación {
         
         String nuevalinea = PAISARREGLADO+actual.format(formato) + " " + mensaje;
         
-        
         File archivo;
         FileWriter escritor;
         PrintWriter linea;
@@ -70,6 +72,8 @@ public class BitacoraAplicación {
                 // Escribir en el archivo
                 linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
+                txa.setText("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
+                txa.setText(txa.getText() + nuevalinea);
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
@@ -81,11 +85,45 @@ public class BitacoraAplicación {
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
                 linea.println(nuevalinea);
+                txa.setText(txa.getText() + nuevalinea);
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
                 System.out.println("" + e);
             }
+        }
+    }
+    
+    public static void leerbitacora(JTextArea txa){
+        FileReader archivo;
+        BufferedReader lector;
+        String linea, contenido;
+        List<String> lineas = new ArrayList<>();
+        try{
+            contenido = "";
+        archivo = new FileReader("./Bitacora_de_Aplicacion/Bitacora.txt");
+        if(archivo.ready()){
+           lector = new BufferedReader(archivo);
+           while((linea=lector.readLine()) != null){
+              lineas.add(linea);
+           }
+           lector.close();
+           
+           // Mostrar la primera línea sin cambios
+            if (!lineas.isEmpty()) {
+                contenido += lineas.get(0) + "\n"; // Primera línea igual
+            }
+
+            // Invertir las demás líneas y agregarlas
+            for (int i = lineas.size() - 1; i > 0; i--) {
+                contenido += lineas.get(i) + "\n"; // Añadir las líneas invertidas
+            }
+            
+           txa.setText(contenido);
+        }
+         
+        }catch(IOException e){
+            System.out.println(""+ e.getMessage());
         }
     }
 }

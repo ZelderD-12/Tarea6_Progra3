@@ -25,8 +25,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-         
-        System.out.println(ArbolSeleccionado);
+        BitacoraAplicación.agregaraccion("Se inicializa la pantalla principal", txabitacora);
+        BitacoraAplicación.leerbitacora(txabitacora);
     }
     
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
@@ -80,6 +80,9 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         btnseleccionado = new javax.swing.JButton();
         btnRecorridos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txabitacora = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,8 +147,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 200));
 
-        jLabel1.setText("Números:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        jLabel1.setText("Bitácora");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
         btnTXT.setText("Subir TXT");
         btnTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +222,16 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jLabel3.setText("Arbol Seleccionado:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
 
+        txabitacora.setColumns(20);
+        txabitacora.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        txabitacora.setRows(5);
+        jScrollPane5.setViewportView(txabitacora);
+
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 1029, 210));
+
+        jLabel4.setText("Números:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -227,9 +240,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -252,24 +263,19 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     private void btnTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTXTActionPerformed
         // TODO add your handling code here:
-        BitacoraAplicación.agregaraccion("Se selecciona el botón para subir un archivo .txt .");
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Seleccionar archivo TXT");
-        BitacoraAplicación.agregaraccion("Se abre el selector de archivos.");
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos de texto (*.txt)", "txt"));
 
         int seleccion = fileChooser.showOpenDialog(this);
 
         if (seleccion == JFileChooser.APPROVE_OPTION) {
-            BitacoraAplicación.agregaraccion("El archivo ha sido seleccionado.");
             File archivo = fileChooser.getSelectedFile();
             
-            BitacoraAplicación.agregaraccion("Se evalúa si es un archivo .txt legible.");
             try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
                 String linea;
                 StringBuilder contenido = new StringBuilder();
                 
-                BitacoraAplicación.agregaraccion("Se empiezan a leer todas sus líneas.");
                 while ((linea = br.readLine()) != null) {
                     contenido.append(linea).append("\n");
                 }
@@ -277,7 +283,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 txaNumeros.setText(contenido.toString());
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                BitacoraAplicación.agregaraccion("Ocurrio un error al leer el archivo .txt .");
             }
         }
     }//GEN-LAST:event_btnTXTActionPerformed
@@ -285,42 +290,27 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private void btnDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBActionPerformed
         // TODO add your handling code here:
         // Método para solicitar datos obligatorios
-        BitacoraAplicación.agregaraccion("Se selecciona el botón para cargar datos desde una base de datos.");
-        BitacoraAplicación.agregaraccion("Se solicitan datos para conectarse a la base de datos.");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar un host.");
         String host = solicitarDato("Ingrese el HOST:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar un puerto.");
         String puerto = solicitarDato("Ingrese el PUERTO:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar un nombre de usuario.");
         String user = solicitarDato("Ingrese el USER:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar una contraseña.");
         String password = solicitarDato("Ingrese el PASSWORD:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar el nombre de la base de datos.");
         String nombreBD = solicitarDato("Ingrese el Nombre de la BD:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar un nombre de una tabla ubiacada dentro de la base de datos.");
         String nombreTabla = solicitarDato("Ingrese el Nombre de la Tabla:");
-        BitacoraAplicación.agregaraccion("Se solicita ingresar el nombre de una columna ubicada dentro de la tabla.");
         String nombreColumna = solicitarDato("Ingrese el Nombre de la Columna:");
 
         // Construimos la URL de conexión
-        BitacoraAplicación.agregaraccion("Se construye una cadena de conexión con los datos proporcionados.");
         String url = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD;
         
-        BitacoraAplicación.agregaraccion("Se evalúa si es posible conectarse con la base de datos.");
         try {
             // Intentamos conectar a la base de datos
             Connection con = DriverManager.getConnection(url, user, password);
-            BitacoraAplicación.agregaraccion("Se confirma que la conexión se realizó exitosamente.");
             JOptionPane.showMessageDialog(this, "CONEXIÓN EXITOSA", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             // Ejecutamos la consulta para obtener los datos de la columna
-            BitacoraAplicación.agregaraccion("Se ejecuta una consulta de búsqueda dentro de la base de datos.");
             String query = "SELECT " + nombreColumna + " FROM " + nombreTabla;
             Statement stmt = con.createStatement();
-            BitacoraAplicación.agregaraccion("Los datos obtenidos de la búsqueda se guardan en una tabla temporal a nivel interno en el programa.");
             ResultSet rs = stmt.executeQuery(query);
             
-            BitacoraAplicación.agregaraccion("Se reconstruyen los resultados en un nuevo objeto para ser legibles y capaces de mostrar en el programa.");
             // Construimos el texto para el JTextArea
             StringBuilder datos = new StringBuilder();
             while (rs.next()) {
@@ -328,19 +318,15 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
             }
 
             // Mostramos los datos en el JTextArea
-            BitacoraAplicación.agregaraccion("Se muestran los resultados en el programa.");
+           
             txaNumeros.setText(datos.toString());
 
             // Cerramos la conexión
             rs.close();
-            BitacoraAplicación.agregaraccion("Se cierra la tabla temporal a nivel interno.");
-            BitacoraAplicación.agregaraccion("Se cierra el ejecutor de consultas.");
             stmt.close();
-            BitacoraAplicación.agregaraccion("Se cierra la conexión.");
             con.close();
 
         } catch (SQLException e) {
-            BitacoraAplicación.agregaraccion("La conexión a la base de datos falló.");
             JOptionPane.showMessageDialog(this, "Error al conectar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnDBActionPerformed
@@ -425,7 +411,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         do {
             dato = JOptionPane.showInputDialog(null, mensaje, "Conexión a la Base de Datos", JOptionPane.QUESTION_MESSAGE);
             if (dato == null || dato.trim().isEmpty()) {
-                BitacoraAplicación.agregaraccion("Se intentó avanzar sin ingresar los datos solicitados.");
                 JOptionPane.showMessageDialog(null, "Este campo es obligatorio. Intente de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } while (dato == null || dato.trim().isEmpty());
@@ -477,16 +462,19 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
     private javax.swing.JScrollPane srcollAVL;
     private javax.swing.JScrollPane srcollBinario1;
     private javax.swing.JTextArea txaNumeros;
+    public javax.swing.JTextArea txabitacora;
     private javax.swing.JTextPane txtBitacora;
     private javax.swing.JTextArea txtOrdenamientos;
     private javax.swing.JTextArea txtarearepetidos;
