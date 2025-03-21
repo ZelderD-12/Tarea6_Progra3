@@ -80,9 +80,9 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         btnseleccionado = new javax.swing.JButton();
         btnRecorridos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
         txabitacora = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,8 +147,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 200));
 
-        jLabel1.setText("Números:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        jLabel1.setText("Bitácora");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
         btnTXT.setText("Subir TXT");
         btnTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -225,12 +225,12 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txabitacora.setColumns(20);
         txabitacora.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         txabitacora.setRows(5);
-        jScrollPane3.setViewportView(txabitacora);
+        jScrollPane5.setViewportView(txabitacora);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 1029, 210));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 1029, 210));
 
-        jLabel2.setText("Números:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jLabel4.setText("Números:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -462,21 +462,22 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
     private javax.swing.JScrollPane srcollAVL;
     private javax.swing.JScrollPane srcollBinario1;
     private javax.swing.JTextArea txaNumeros;
+    public javax.swing.JTextArea txabitacora;
     private javax.swing.JTextPane txtBitacora;
     private javax.swing.JTextArea txtOrdenamientos;
     private javax.swing.JTextArea txtarearepetidos;
-    public javax.swing.JTextArea txabitacora;
     private javax.swing.JTextField txtcantidad;
     // End of variables declaration//GEN-END:variables
 }
