@@ -7,9 +7,9 @@ import java.io.*;
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
-
+import javax.swing.SwingUtilities;
 public class FrmVentanaPrincipal extends javax.swing.JFrame {
-
+   
     private SimuladorArbolBinario simuladorBinario; // Árbol binario
     private SimuladorArbolBinario simuladorAVL;     // Árbol AVL 
     private ArrayList<Integer> numeros;
@@ -23,7 +23,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-        BitacoraAplicación.agregaraccion("Se inicializa la pantalla principal");
+         
+     
     }
     
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
@@ -66,6 +67,9 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnTXT = new javax.swing.JButton();
         btnDB = new javax.swing.JButton();
+        BtnEliminar = new javax.swing.JButton();
+        BtnAgregar = new javax.swing.JButton();
+        BtnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,7 +143,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnTXTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 110, 40));
+        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, 110, 40));
 
         btnDB.setText("Cargar DB");
         btnDB.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +151,31 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnDBActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 110, 40));
+        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 110, 40));
+
+        BtnEliminar.setText("Eliminar");
+        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, -1, -1));
+
+        BtnAgregar.setText("Agregar");
+        BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
+
+        BtnBuscar.setText("Buscar");
+        BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,6 +303,63 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnDBActionPerformed
 
+    private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
+      if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método insertar de la clase Control
+        controlador.insertar(numero);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnAgregarActionPerformed
+
+    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+         if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método eliminar de la clase Control
+        controlador.eliminar(numero);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnEliminarActionPerformed
+
+    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+       if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método buscar de la clase Control
+        String resultado = controlador.buscar(numero);
+
+        // Muestra el resultado en un cuadro de diálogo
+        JOptionPane.showMessageDialog(this, resultado, "Resultado de la búsqueda", JOptionPane.INFORMATION_MESSAGE);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnBuscarActionPerformed
+
     // Método para solicitar datos y evitar valores vacíos
     private String solicitarDato(String mensaje) {
         String dato;
@@ -321,6 +406,9 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnBuscar;
+    private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton btnDB;
     private javax.swing.JButton btnTXT;
     private javax.swing.JButton btnstart;
