@@ -24,6 +24,10 @@ public class Control extends Thread {
         this.spaneBinario = spaneB;
         this.paneBinario = paneB;
     }
+    public void insertar(int numero){
+        simuladorAVL.insertar(numero); // Inserta en el árbol equilibrado
+        simuladorBinario.agregar(numero);
+    }
 
     @Override
     public void run() {
@@ -32,8 +36,7 @@ public class Control extends Thread {
                 if (!ejecutando) { // Verifica si se debe detener el bucle
                     break;
                 }
-                simuladorAVL.insertar(numero); // Inserta en el árbol equilibrado
-                simuladorBinario.agregar(numero); // Inserta en el árbol no equilibrado
+                insertar(numero);
                 actualizarVista(); // Actualiza la vista de ambos árboles
                 Thread.sleep(400); // Pausa para simular la inserción paso a paso
             }
