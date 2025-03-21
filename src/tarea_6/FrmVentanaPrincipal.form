@@ -170,11 +170,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-
-              <AbsoluteConstraints x="70" y="290" width="-1" height="-1"/>
-
-              <AbsoluteConstraints x="480" y="540" width="-1" height="-1"/>
-
+              <AbsoluteConstraints x="460" y="540" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -325,7 +321,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
@@ -351,7 +347,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="text" type="java.lang.String" value="N&#xfa;meros:"/>
           </Properties>
