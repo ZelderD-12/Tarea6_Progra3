@@ -111,3 +111,89 @@
                      Guatemala                    | 2025-03-21 | 00:17:47 |  El archivo ha sido seleccionado.
                      Guatemala                    | 2025-03-21 | 00:17:47 |  Se evalúa si es un archivo .txt legible.
                      Guatemala                    | 2025-03-21 | 00:17:47 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 06:59:37 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 06:59:40 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 06:59:41 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 06:59:44 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 06:59:44 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 06:59:44 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 07:01:31 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 07:01:37 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 07:01:38 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 07:01:41 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 07:01:41 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 07:01:41 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 11:34:21 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:34:47 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:35:58 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:36:32 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:37:32 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:51:04 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:51:07 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 11:51:08 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 11:51:09 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 11:51:09 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 11:51:09 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 11:51:40 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:51:52 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 11:51:52 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 11:51:55 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 11:51:55 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 11:51:55 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 11:52:25 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 11:52:28 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 11:52:29 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 11:52:31 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 11:52:31 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 11:52:31 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:05:48 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:05:50 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:05:50 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:05:52 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:05:52 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:05:52 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:06:17 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:06:20 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:06:21 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:06:23 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:06:23 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:06:23 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:09:19 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:09:21 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:09:22 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:09:24 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:09:24 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:09:24 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:10:02 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:10:26 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:10:28 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:10:28 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:10:30 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:10:30 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:10:30 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:11:31 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:12:09 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:12:54 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:12:59 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:12:59 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:13:01 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:13:01 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:13:01 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:19:05 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:19:07 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:19:07 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:19:10 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:19:10 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:19:10 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:19:53 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:19:56 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:19:56 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:19:59 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:19:59 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:19:59 |  Se empiezan a leer todas sus líneas.
+                     Guatemala                    | 2025-03-21 | 12:23:07 |  Se inicia el programa
+                     Guatemala                    | 2025-03-21 | 12:23:08 |  Se selecciona el botón para subir un archivo .txt .
+                     Guatemala                    | 2025-03-21 | 12:23:08 |  Se abre el selector de archivos.
+                     Guatemala                    | 2025-03-21 | 12:23:11 |  El archivo ha sido seleccionado.
+                     Guatemala                    | 2025-03-21 | 12:23:11 |  Se evalúa si es un archivo .txt legible.
+                     Guatemala                    | 2025-03-21 | 12:23:11 |  Se empiezan a leer todas sus líneas.
