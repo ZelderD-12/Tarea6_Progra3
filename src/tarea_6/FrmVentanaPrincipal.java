@@ -26,7 +26,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
         BitacoraAplicación.agregaraccion("Se inicializa la pantalla principal", txabitacora);
-        BitacoraAplicación.leerbitacora(txabitacora);
     }
     
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
@@ -75,8 +74,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtarearepetidos = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtBitacora = new javax.swing.JTextPane();
         btnseleccionado = new javax.swing.JButton();
         btnRecorridos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -198,10 +195,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("Repetidos:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 70, -1));
-
-        jScrollPane4.setViewportView(txtBitacora);
-
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 380, 60));
 
         btnseleccionado.setText("AVL");
         btnseleccionado.addActionListener(new java.awt.event.ActionListener() {
@@ -467,7 +460,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
@@ -475,7 +467,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane srcollBinario1;
     private javax.swing.JTextArea txaNumeros;
     public javax.swing.JTextArea txabitacora;
-    private javax.swing.JTextPane txtBitacora;
     private javax.swing.JTextArea txtOrdenamientos;
     private javax.swing.JTextArea txtarearepetidos;
     private javax.swing.JTextField txtcantidad;
