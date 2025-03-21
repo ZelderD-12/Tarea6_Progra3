@@ -1,0 +1,3 @@
+                     Ubicación                    |    Fecha   |   Hora   |           Actividad
+                   United States                  | 2025-03-20 | 01:12:38 |  Se inicia el programa
+                   United States                  | 2025-03-20 | 01:12:38 |  Se inicializa la pantalla principal
