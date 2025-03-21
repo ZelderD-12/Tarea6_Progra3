@@ -3,17 +3,19 @@ package tarea_6;
 
 import arbol.SimuladorArbolBinario;
 import java.awt.Color;
+import static java.awt.SystemColor.control;
 import java.io.*;
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
-
+import javax.swing.SwingUtilities;
 public class FrmVentanaPrincipal extends javax.swing.JFrame {
-
+   
     private SimuladorArbolBinario simuladorBinario; // Árbol binario
     private SimuladorArbolBinario simuladorAVL;     // Árbol AVL 
     private ArrayList<Integer> numeros;
     private Control controlador; // Controlador para manejar el hilo
+     String ArbolSeleccionado = "AVL";
 
 
     public FrmVentanaPrincipal() {
@@ -56,7 +58,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         srcollAVL = new javax.swing.JScrollPane();
         panelAVL = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtOrdenamientos = new javax.swing.JTextArea();
         srcollBinario1 = new javax.swing.JScrollPane();
         panelBinario1 = new javax.swing.JPanel();
         btnstart = new javax.swing.JButton();
@@ -67,6 +69,17 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnTXT = new javax.swing.JButton();
         btnDB = new javax.swing.JButton();
+        BtnEliminar = new javax.swing.JButton();
+        BtnAgregar = new javax.swing.JButton();
+        BtnBuscar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtarearepetidos = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtBitacora = new javax.swing.JTextPane();
+        btnseleccionado = new javax.swing.JButton();
+        btnRecorridos = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txabitacora = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
@@ -90,11 +103,11 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(srcollAVL, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 430, 240));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtOrdenamientos.setColumns(20);
+        txtOrdenamientos.setRows(5);
+        jScrollPane2.setViewportView(txtOrdenamientos);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 380, 190));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 380, 110));
 
         javax.swing.GroupLayout panelBinario1Layout = new javax.swing.GroupLayout(panelBinario1);
         panelBinario1.setLayout(panelBinario1Layout);
@@ -132,10 +145,10 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setRows(5);
         jScrollPane1.setViewportView(txaNumeros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 430, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 200));
 
-        jLabel1.setText("Bitácora");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
+        jLabel1.setText("Números:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
 
         btnTXT.setText("Subir TXT");
         btnTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +156,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnTXTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 110, 40));
+        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 110, 40));
 
         btnDB.setText("Cargar DB");
         btnDB.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +164,63 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 btnDBActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 110, 40));
+        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 110, 40));
+
+        BtnEliminar.setText("Eliminar");
+        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
+
+        BtnAgregar.setText("Insertar");
+        BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, -1));
+
+        BtnBuscar.setText("Buscar");
+        BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 80, -1));
+
+        txtarearepetidos.setColumns(20);
+        txtarearepetidos.setRows(5);
+        jScrollPane3.setViewportView(txtarearepetidos);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 170, 200));
+
+        jLabel2.setText("Repetidos:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 70, -1));
+
+        jScrollPane4.setViewportView(txtBitacora);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 380, 60));
+
+        btnseleccionado.setText("AVL");
+        btnseleccionado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnseleccionadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnseleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 110, -1));
+
+        btnRecorridos.setText("Recorridos");
+        btnRecorridos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecorridosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 310, -1));
+
+        jLabel3.setText("Arbol Seleccionado:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
 
         txabitacora.setColumns(20);
         txabitacora.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
@@ -182,7 +251,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         if (controlador != null && controlador.isAlive()) {
             controlador.detener(); 
         }
-        controlador = new Control(numeros, srcollAVL, panelAVL,srcollBinario1,panelBinario1); 
+        controlador = new Control(numeros, srcollAVL, panelAVL,srcollBinario1,panelBinario1,txtarearepetidos); 
         controlador.start(); 
     }//GEN-LAST:event_btnstartActionPerformed
 
@@ -262,6 +331,80 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnDBActionPerformed
 
+    private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
+      if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método insertar de la clase Control
+        controlador.insertar(numero);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnAgregarActionPerformed
+
+    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+         if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método eliminar de la clase Control
+        controlador.eliminar(numero);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnEliminarActionPerformed
+
+    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+       if (txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int numero = Integer.parseInt(txtcantidad.getText().trim());
+
+        // Llama al método buscar de la clase Control
+        String resultado = controlador.buscar(numero);
+
+        // Muestra el resultado en un cuadro de diálogo
+        JOptionPane.showMessageDialog(this, resultado, "Resultado de la búsqueda", JOptionPane.INFORMATION_MESSAGE);
+
+        txtcantidad.setText("");
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void btnseleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionadoActionPerformed
+        if (btnseleccionado.getText() == "AVL") {
+            btnseleccionado.setText("Binario");
+            ArbolSeleccionado = "BinarioNoEquilibrado";
+            System.out.println(ArbolSeleccionado);
+        }
+        else{
+             btnseleccionado.setText("AVL");
+            ArbolSeleccionado = "AVL";
+            System.out.println(ArbolSeleccionado);
+        }
+    }//GEN-LAST:event_btnseleccionadoActionPerformed
+
+    private void btnRecorridosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecorridosActionPerformed
+      controlador.escribirRecorridos(txtOrdenamientos, ArbolSeleccionado);
+    }//GEN-LAST:event_btnRecorridosActionPerformed
+
     // Método para solicitar datos y evitar valores vacíos
     private String solicitarDato(String mensaje) {
         String dato;
@@ -307,22 +450,32 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnBuscar;
+    private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton btnDB;
+    private javax.swing.JButton btnRecorridos;
     private javax.swing.JButton btnTXT;
+    private javax.swing.JButton btnseleccionado;
     private javax.swing.JButton btnstart;
     private javax.swing.JButton btnstop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
     private javax.swing.JScrollPane srcollAVL;
     private javax.swing.JScrollPane srcollBinario1;
     private javax.swing.JTextArea txaNumeros;
+    private javax.swing.JTextPane txtBitacora;
+    private javax.swing.JTextArea txtOrdenamientos;
+    private javax.swing.JTextArea txtarearepetidos;
     public javax.swing.JTextArea txabitacora;
     private javax.swing.JTextField txtcantidad;
     // End of variables declaration//GEN-END:variables
