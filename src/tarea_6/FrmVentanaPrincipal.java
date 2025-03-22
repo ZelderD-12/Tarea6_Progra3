@@ -20,6 +20,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     public FrmVentanaPrincipal() {
         initComponents();
+        this.setTitle("Arbol no Equilibrado y Equilibrado");
         simuladorBinario = new SimuladorArbolBinario();
         simuladorAVL = new SimuladorArbolBinario();
         txaNumeros.setEditable(false);
