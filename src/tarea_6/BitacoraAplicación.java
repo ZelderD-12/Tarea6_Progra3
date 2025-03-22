@@ -101,6 +101,7 @@ public class BitacoraAplicación {
     }
     
     public static void leerbitacora(JTextArea txa){
+        new Thread(() -> {
         FileReader archivo;
         BufferedReader lector;
         String linea, contenido;
@@ -131,5 +132,6 @@ public class BitacoraAplicación {
         }catch(IOException e){
             System.out.println(""+ e.getMessage());
         }
+         }).start();
     }
 }
