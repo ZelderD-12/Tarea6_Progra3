@@ -16,6 +16,7 @@ public class BitacoraAplicación {
     }
     
     public static void agregaraccion(String mensaje) { 
+        new Thread(() -> {
         // Obtener la fecha y hora actual
         LocalDateTime actual = LocalDateTime.now();
         
@@ -96,6 +97,7 @@ public class BitacoraAplicación {
         }
         
         leerbitacora(txa);
+        }).start();
     }
     
     public static void leerbitacora(JTextArea txa){
