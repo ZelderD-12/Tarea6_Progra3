@@ -20,13 +20,15 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     public FrmVentanaPrincipal() {
         initComponents();
+        this.setTitle("Arbol no Equilibrado y Equilibrado");
         simuladorBinario = new SimuladorArbolBinario();
         simuladorAVL = new SimuladorArbolBinario();
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-        BitacoraAplicación.agregaraccion("Se inicializa la pantalla principal", txabitacora);
-        BitacoraAplicación.leerbitacora(txabitacora);
+        BitacoraAplicación.agregartextarea(txabitacora);
+        BitacoraAplicación.agregaraccion("Iniciando el programa.");
+        
     }
     
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
@@ -75,8 +77,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtarearepetidos = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtBitacora = new javax.swing.JTextPane();
         btnseleccionado = new javax.swing.JButton();
         btnRecorridos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -199,10 +199,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Repetidos:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 70, -1));
 
-        jScrollPane4.setViewportView(txtBitacora);
-
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 380, 60));
-
         btnseleccionado.setText("AVL");
         btnseleccionado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,6 +218,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jLabel3.setText("Arbol Seleccionado:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
 
+        txabitacora.setEditable(false);
         txabitacora.setColumns(20);
         txabitacora.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         txabitacora.setRows(5);
@@ -247,22 +244,28 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnstartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartActionPerformed
-         numeros = leerNumerosDeTextArea(txaNumeros); 
+        BitacoraAplicación.agregaraccion("Botón iniciar presionado.");
+        BitacoraAplicación.agregaraccion("Leyendo el contenido ingresado.");
+        numeros = leerNumerosDeTextArea(txaNumeros); 
         if (controlador != null && controlador.isAlive()) {
+            BitacoraAplicación.agregaraccion("Contenido nulo.");
             controlador.detener(); 
         }
         controlador = new Control(numeros, srcollAVL, panelAVL,srcollBinario1,panelBinario1,txtarearepetidos); 
+        BitacoraAplicación.agregaraccion("Iniciando la operación.");
         controlador.start(); 
     }//GEN-LAST:event_btnstartActionPerformed
 
     private void btnstopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstopActionPerformed
         if (controlador != null) {
+            BitacoraAplicación.agregaraccion("Deteniendo la generación del árbol.");
             controlador.detener(); // Detiene el hilo
         }
     }//GEN-LAST:event_btnstopActionPerformed
 
     private void btnTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTXTActionPerformed
         // TODO add your handling code here:
+        BitacoraAplicación.agregaraccion("Eligiendo arhcivo .txt a evaluar.");
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Seleccionar archivo TXT");
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos de texto (*.txt)", "txt"));
@@ -279,9 +282,10 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
                 while ((linea = br.readLine()) != null) {
                     contenido.append(linea).append("\n");
                 }
-
+                BitacoraAplicación.agregaraccion("Leyendo y almacenando el contenido del txt.");
                 txaNumeros.setText(contenido.toString());
             } catch (IOException e) {
+                BitacoraAplicación.agregaraccion("Error al leer el archivo.");
                 JOptionPane.showMessageDialog(this, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -290,25 +294,38 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private void btnDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBActionPerformed
         // TODO add your handling code here:
         // Método para solicitar datos obligatorios
-        String host = solicitarDato("Ingrese el HOST:");
+        BitacoraAplicación.agregaraccion("Búsqueda de base de datos iniciada.");
+        BitacoraAplicación.agregaraccion("Ingresando el HOST.");
+        String host = solicitarDato("Ingrese el host:");
+        BitacoraAplicación.agregaraccion("Ingresando el puerto.");
         String puerto = solicitarDato("Ingrese el PUERTO:");
+        BitacoraAplicación.agregaraccion("Ingresando el usuario.");
         String user = solicitarDato("Ingrese el USER:");
+        BitacoraAplicación.agregaraccion("Ingresando la contraseña.");
         String password = solicitarDato("Ingrese el PASSWORD:");
+        BitacoraAplicación.agregaraccion("Ingresando el nombre de la base de datos.");
         String nombreBD = solicitarDato("Ingrese el Nombre de la BD:");
+        BitacoraAplicación.agregaraccion("Ingresando el nombre de la tabla dentro de la base de datos.");
         String nombreTabla = solicitarDato("Ingrese el Nombre de la Tabla:");
+        BitacoraAplicación.agregaraccion("Ingresando el nombre de la columa dentro de la tabla.");
         String nombreColumna = solicitarDato("Ingrese el Nombre de la Columna:");
 
         // Construimos la URL de conexión
+        BitacoraAplicación.agregaraccion("Construyendo la cadena de conexión a BD.");
         String url = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD;
         
         try {
             // Intentamos conectar a la base de datos
             Connection con = DriverManager.getConnection(url, user, password);
+            
             JOptionPane.showMessageDialog(this, "CONEXIÓN EXITOSA", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
+            BitacoraAplicación.agregaraccion("La conexión ha sido exitosa.");
             // Ejecutamos la consulta para obtener los datos de la columna
+            BitacoraAplicación.agregaraccion("Creación de la consulta SQL.");
             String query = "SELECT " + nombreColumna + " FROM " + nombreTabla;
+            BitacoraAplicación.agregaraccion("Ejecutando la consulta SQL.");
             Statement stmt = con.createStatement();
+            BitacoraAplicación.agregaraccion("Llenando la tabla temporal con los resultados de la consulta SQL.");
             ResultSet rs = stmt.executeQuery(query);
             
             // Construimos el texto para el JTextArea
@@ -318,72 +335,82 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
             }
 
             // Mostramos los datos en el JTextArea
-           
+           BitacoraAplicación.agregaraccion("Enviando los datos a la interfaz gráfica.");
             txaNumeros.setText(datos.toString());
 
             // Cerramos la conexión
+            BitacoraAplicación.agregaraccion("Cerrando la tabla temporal.");
             rs.close();
             stmt.close();
+            BitacoraAplicación.agregaraccion("Cerrando la conexión.");
             con.close();
 
         } catch (SQLException e) {
+            BitacoraAplicación.agregaraccion("No se pudo conectar a la BD.");
             JOptionPane.showMessageDialog(this, "Error al conectar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnDBActionPerformed
 
     private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
       if (txtcantidad.getText().trim().isEmpty()) {
+          BitacoraAplicación.agregaraccion("Se detecta una inserción nula.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
     try {
         int numero = Integer.parseInt(txtcantidad.getText().trim());
-
+        BitacoraAplicación.agregaraccion("Empezando la inserción.");
         // Llama al método insertar de la clase Control
         controlador.insertar(numero);
 
         txtcantidad.setText("");
     } catch (NumberFormatException e) {
+        BitacoraAplicación.agregaraccion("Número inválido.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_BtnAgregarActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
          if (txtcantidad.getText().trim().isEmpty()) {
+             BitacoraAplicación.agregaraccion("Se detecta una eliminación nula.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
     try {
         int numero = Integer.parseInt(txtcantidad.getText().trim());
-
+        BitacoraAplicación.agregaraccion("Empezando la eliminación.");
         // Llama al método eliminar de la clase Control
         controlador.eliminar(numero);
 
         txtcantidad.setText("");
     } catch (NumberFormatException e) {
+        BitacoraAplicación.agregaraccion("Valor inválido.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
        if (txtcantidad.getText().trim().isEmpty()) {
+           BitacoraAplicación.agregaraccion("Se detecta una búsqueda nula.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
     try {
         int numero = Integer.parseInt(txtcantidad.getText().trim());
-
+        BitacoraAplicación.agregaraccion("Empezando la búsqueda.");
         // Llama al método buscar de la clase Control
         String resultado = controlador.buscar(numero);
 
         // Muestra el resultado en un cuadro de diálogo
+        BitacoraAplicación.agregaraccion("Fin de la búsqueda.");
         JOptionPane.showMessageDialog(this, resultado, "Resultado de la búsqueda", JOptionPane.INFORMATION_MESSAGE);
 
         txtcantidad.setText("");
     } catch (NumberFormatException e) {
+        BitacoraAplicación.agregaraccion("Número inválido.");
         JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_BtnBuscarActionPerformed
@@ -391,10 +418,12 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private void btnseleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionadoActionPerformed
         if (btnseleccionado.getText() == "AVL") {
             btnseleccionado.setText("Binario");
+            BitacoraAplicación.agregaraccion("Creando árbol AVL.");
             ArbolSeleccionado = "BinarioNoEquilibrado";
             System.out.println(ArbolSeleccionado);
         }
         else{
+            BitacoraAplicación.agregaraccion("Creando árbol binario.");
              btnseleccionado.setText("AVL");
             ArbolSeleccionado = "AVL";
             System.out.println(ArbolSeleccionado);
@@ -402,7 +431,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnseleccionadoActionPerformed
 
     private void btnRecorridosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecorridosActionPerformed
-      controlador.escribirRecorridos(txtOrdenamientos, ArbolSeleccionado);
+      BitacoraAplicación.agregaraccion("Iniciando recorridos.");
+        controlador.escribirRecorridos(txtOrdenamientos, ArbolSeleccionado);
     }//GEN-LAST:event_btnRecorridosActionPerformed
 
     // Método para solicitar datos y evitar valores vacíos
@@ -467,7 +497,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPanel panelAVL;
     private javax.swing.JPanel panelBinario1;
@@ -475,7 +504,6 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane srcollBinario1;
     private javax.swing.JTextArea txaNumeros;
     public javax.swing.JTextArea txabitacora;
-    private javax.swing.JTextPane txtBitacora;
     private javax.swing.JTextArea txtOrdenamientos;
     private javax.swing.JTextArea txtarearepetidos;
     private javax.swing.JTextField txtcantidad;

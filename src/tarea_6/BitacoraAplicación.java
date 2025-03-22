@@ -9,8 +9,13 @@ import java.util.List;
 import javax.swing.*;
 
 public class BitacoraAplicación {
+    public static JTextArea txa ;
     
-    public static void agregaraccion(String mensaje, JTextArea txa) { 
+    public static void agregartextarea(JTextArea txa){
+        BitacoraAplicación.txa = txa;
+    }
+    
+    public static void agregaraccion(String mensaje) { 
         // Obtener la fecha y hora actual
         LocalDateTime actual = LocalDateTime.now();
         
@@ -72,8 +77,6 @@ public class BitacoraAplicación {
                 // Escribir en el archivo
                 linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
-                txa.setText("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
-                txa.setText(txa.getText() + nuevalinea);
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
@@ -85,13 +88,14 @@ public class BitacoraAplicación {
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
                 linea.println(nuevalinea);
-                txa.setText(txa.getText() + nuevalinea);
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
                 System.out.println("" + e);
             }
         }
+        
+        leerbitacora(txa);
     }
     
     public static void leerbitacora(JTextArea txa){
