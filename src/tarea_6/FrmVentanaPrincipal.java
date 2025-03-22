@@ -25,7 +25,8 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-        BitacoraAplicación.agregaraccion("Se inicializa la pantalla principal", txabitacora);
+        BitacoraAplicación.agregartextarea(txabitacora);
+        
     }
     
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {

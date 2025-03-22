@@ -4,6 +4,7 @@ public class ArbolBinarioNoEquilibrado extends ArbolBB {
 private ArbolBB miArbol; // Árbol binario de búsqueda no equilibrado
     // Método para insertar un nodo sin equilibrar
     private Nodo insertarNoBalanceado(Nodo nodo, int dato) {
+        
         if (nodo == null) {
             return new Nodo(dato);
         }
