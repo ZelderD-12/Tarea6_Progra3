@@ -1,0 +1,22 @@
+                     Ubicación                    |    Fecha   |   Hora   |           Actividad
+                   United States                  | 23-03-2025 | 00:27:56 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:27:56 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:27:56 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:28:18 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:28:18 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:28:18 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:33:00 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:33:01 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:33:01 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:34:50 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:34:50 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:34:50 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:35:08 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:35:08 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:35:08 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:39:15 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:39:15 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:39:15 |  Iniciando el programa.
+                   United States                  | 23-03-2025 | 00:40:09 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:40:09 |  Inicializando el árbol.
+                   United States                  | 23-03-2025 | 00:40:09 |  Iniciando el programa.

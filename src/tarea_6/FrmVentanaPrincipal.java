@@ -20,13 +20,14 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     public FrmVentanaPrincipal() {
         initComponents();
+        BitacoraAplicación.agregartextarea(txabitacora);
+        BitacoraAplicación.leerbitacora();
         this.setTitle("Arbol no Equilibrado y Equilibrado");
         simuladorBinario = new SimuladorArbolBinario();
         simuladorAVL = new SimuladorArbolBinario();
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-        BitacoraAplicación.agregartextarea(txabitacora);
         BitacoraAplicación.agregaraccion("Iniciando el programa.");
         
     }
