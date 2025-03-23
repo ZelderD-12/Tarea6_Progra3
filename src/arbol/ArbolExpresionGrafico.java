@@ -3,6 +3,7 @@ package arbol;
 import java.awt.*;
 import java.util.HashMap;
 import javax.swing.*;
+import tarea_6.BitacoraAplicación;
 
 public class ArbolExpresionGrafico extends JPanel {
     private ArbolBB miArbol;
@@ -46,6 +47,7 @@ public class ArbolExpresionGrafico extends JPanel {
     }
 
     private void calcularPosiciones() {
+        BitacoraAplicación.agregaraccion("Calculando posiciones.");
         posicionNodos.clear();
         subtreeSizes.clear();
         Nodo root = miArbol.getRaiz();
@@ -57,7 +59,7 @@ public class ArbolExpresionGrafico extends JPanel {
 
     private Dimension calcularTamañoSubarbol(Nodo n) {
         if (n == null) return new Dimension(0, 0);
-
+        BitacoraAplicación.agregaraccion("Calculando tamaño del surbárbol.");
         // Asegurarse de que fm esté inicializado
         if (fm == null) {
             return new Dimension(0, 0);
@@ -76,6 +78,7 @@ public class ArbolExpresionGrafico extends JPanel {
     }
 
     private void calcularPosicion(Nodo n, int left, int right, int top) {
+        BitacoraAplicación.agregaraccion("Calculando posición.");
         if (n == null) return;
 
         Dimension ld = subtreeSizes.getOrDefault(n.getIzq(), empty);
@@ -97,6 +100,7 @@ public class ArbolExpresionGrafico extends JPanel {
     }
 
     private void dibujarArbol(Graphics2D g, Nodo n, int puntox, int puntoy, int yoffs) {
+        BitacoraAplicación.agregaraccion("Dibujando árbol.");
         if (n == null) return;
 
         Rectangle r = posicionNodos.get(n);
@@ -128,6 +132,7 @@ public class ArbolExpresionGrafico extends JPanel {
 
     // Método para calcular los límites del árbol
     private Rectangle calcularLimitesArbol(Nodo nodo) {
+        BitacoraAplicación.agregaraccion("Calculando limites del árbol.");
         if (nodo == null) {
             return new Rectangle(0, 0, 0, 0);
         }
@@ -143,6 +148,7 @@ public class ArbolExpresionGrafico extends JPanel {
 
     // Método para desplazar el JScrollPane a la posición de un nodo
     public void desplazarANodo(Nodo nodo) {
+        BitacoraAplicación.agregaraccion("Desplazando nodo.");
         if (nodo != null && posicionNodos.containsKey(nodo)) {
             Rectangle rect = posicionNodos.get(nodo);
             scrollPane.getViewport().scrollRectToVisible(rect);
