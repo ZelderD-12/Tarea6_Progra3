@@ -4,128 +4,113 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 
 public class BitacoraAplicación {
-    public static JTextArea txa ;
-    
-    public static void agregartextarea(JTextArea txa){
+    private static JTextArea txa;
+    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("'| 'dd-MM-yyyy '| 'HH:mm:ss '| '");
+    private static BufferedWriter escritorArchivo;
+
+    // Inicializar el escritor del archivo
+    static {
+        try {
+            File archivo = new File("./Bitacora_de_Aplicacion/Bitacora.txt");
+            if (!archivo.exists()) {
+                archivo.getParentFile().mkdirs(); // Crear directorio si no existe
+                archivo.createNewFile();
+            }
+            escritorArchivo = new BufferedWriter(new FileWriter(archivo, true));
+        } catch (IOException e) {
+            System.err.println("Error al inicializar el archivo de bitácora: " + e.getMessage());
+        }
+    }
+
+    public static void agregartextarea(JTextArea txa) {
         BitacoraAplicación.txa = txa;
     }
-    
-    public static void agregaraccion(String mensaje) { 
-        // Obtener la fecha y hora actual
-        LocalDateTime actual = LocalDateTime.now();
-        
-        // Definir el formato deseado
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("'| 'dd-MM-yyyy '| 'HH:mm:ss '| '");
-        
-        // Obtener el país o la región desde el sistema
-        String pais = Locale.getDefault().getDisplayCountry();
-        
-        String PAISARREGLADO = pais;
-        
-        double espaciosfaltantes = 50- pais.length();
-        
-        if(espaciosfaltantes>0){
-            if((espaciosfaltantes%2)==0){
-                int contador = (int) (espaciosfaltantes/2);
-                
-                //Espacios al inicio
-                
-                for(int h = 0 ; h<contador; h++){
-                    PAISARREGLADO = " " + PAISARREGLADO;
-                }
-                
-                //Espacios al final
-                
-                for(int h = 0 ; h<contador; h++){
-                    PAISARREGLADO = PAISARREGLADO + " ";
-                }
-            }else{
-               int contador = (int) (espaciosfaltantes/2);
-                
-                //Espacios al inicio
-                
-                for(int h = 0 ; h<=contador; h++){
-                    PAISARREGLADO = " " + PAISARREGLADO;
-                }
-                
-                //Espacios al final
-                
-                for(int h = 0 ; h<contador; h++){
-                    PAISARREGLADO = PAISARREGLADO + " ";
-                }
-            }
-        }
-        
-        
-        
-        String nuevalinea = PAISARREGLADO+actual.format(formato) + " " + mensaje;
-        
-        File archivo;
-        FileWriter escritor;
-        PrintWriter linea;
-        archivo = new File("./Bitacora_de_Aplicacion/Bitacora.txt");
-        if (!archivo.exists()) {
+
+    public static void agregaraccion(String mensaje) {
+        new Thread(() -> {
+            LocalDateTime actual = LocalDateTime.now();
+            String pais = Locale.getDefault().getDisplayCountry();
+            String paisAjustado = ajustarPais(pais);
+
+            String nuevalinea = paisAjustado + actual.format(FORMATO) + " " + mensaje;
+
+            // Escribir en el archivo
             try {
-                archivo.createNewFile();
-                escritor = new FileWriter(archivo, true);
-                linea = new PrintWriter(escritor);
-                // Escribir en el archivo
-                linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
-                linea.println(nuevalinea);
-                txa.setText("                     Ubicación                    |    Fecha   |   Hora   |           Actividad \n");
-                txa.setText(txa.getText() + nuevalinea + "\n");
-                txa.setCaretPosition(txa.getDocument().getLength());
-                linea.close();
-                escritor.close();
+                synchronized (escritorArchivo) {
+                    escritorArchivo.write(nuevalinea);
+                    escritorArchivo.newLine();
+                    escritorArchivo.flush();
+                }
             } catch (IOException e) {
-                System.out.println("" + e);
+                System.err.println("Error al escribir en la bitácora: " + e.getMessage());
             }
-        } else {
-            try {
-                escritor = new FileWriter(archivo, true);
-                linea = new PrintWriter(escritor);
-                // Escribir en el archivo
-                linea.println(nuevalinea);
-                txa.setText(txa.getText() + nuevalinea + "\n");
-           txa.setCaretPosition(txa.getDocument().getLength());
-                linea.close();
-                escritor.close();
-            } catch (IOException e) {
-                System.out.println("" + e);
-            }
-        }
+
+            // Actualizar la interfaz gráfica
+            SwingUtilities.invokeLater(() -> {
+                if (txa != null) {
+                    txa.append(nuevalinea + "\n");
+                    txa.setCaretPosition(txa.getDocument().getLength());
+                }
+            });
+        }).start();
     }
-    
-        public static void leerbitacora(){
-        FileReader archivo;
-        BufferedReader lector;
-        String linea, contenido;
-        List<String> lineas = new ArrayList<>();
-        try{
-            contenido = "";
-        archivo = new FileReader("./Bitacora_de_Aplicacion/Bitacora.txt");
-        if(archivo.ready()){
-           lector = new BufferedReader(archivo);
-           while((linea=lector.readLine()) != null){
-              lineas.add(linea);
-           }
-           lector.close();
-           
-            for (int i = 0; i < lineas.size(); i++) {
-                contenido += lineas.get(i) + "\n";
+
+    private static String ajustarPais(String pais) {
+        int espaciosFaltantes = 50 - pais.length();
+        if (espaciosFaltantes > 0) {
+            int espaciosInicio = (espaciosFaltantes + 1) / 2;
+            int espaciosFin = espaciosFaltantes / 2;
+
+            StringBuilder paisAjustado = new StringBuilder();
+            for (int i = 0; i < espaciosInicio; i++) {
+                paisAjustado.append(" ");
             }
-            
-           txa.setText(contenido);
-           txa.setCaretPosition(txa.getDocument().getLength());
+            paisAjustado.append(pais);
+            for (int i = 0; i < espaciosFin; i++) {
+                paisAjustado.append(" ");
+            }
+            return paisAjustado.toString();
         }
-         
-        }catch(IOException e){
-            System.out.println(""+ e.getMessage());
+        return pais;
+    }
+
+    public static void leerbitacora() {
+        new Thread(() -> {
+            File archivo = new File("./Bitacora_de_Aplicacion/Bitacora.txt");
+            if (!archivo.exists()) {
+                return;
+            }
+
+            try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
+                StringBuilder contenido = new StringBuilder();
+                String linea;
+                while ((linea = lector.readLine()) != null) {
+                    contenido.append(linea).append("\n");
+                }
+
+                SwingUtilities.invokeLater(() -> {
+                    if (txa != null) {
+                        txa.setText(contenido.toString());
+                        txa.setCaretPosition(txa.getDocument().getLength());
+                    }
+                });
+            } catch (IOException e) {
+                System.err.println("Error al leer la bitácora: " + e.getMessage());
+            }
+        }).start();
+    }
+
+    // Método para cerrar el archivo de bitácora al finalizar
+    public static void cerrarBitacora() {
+        try {
+            if (escritorArchivo != null) {
+                escritorArchivo.close();
+            }
+        } catch (IOException e) {
+            System.err.println("Error al cerrar el archivo de bitácora: " + e.getMessage());
         }
     }
 }
