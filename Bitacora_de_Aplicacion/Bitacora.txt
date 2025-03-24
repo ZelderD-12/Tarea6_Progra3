@@ -1,0 +1,446 @@
+                     Ubicación                    |    Fecha   |   Hora   |           Actividad
+                     Guatemala                    | 23-03-2025 | 17:37:23 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:24 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:24 |  Iniciando el programa.
+                     Guatemala                    | 23-03-2025 | 17:37:46 |  Eligiendo arhcivo .txt a evaluar.
+                     Guatemala                    | 23-03-2025 | 17:37:51 |  Leyendo y almacenando el contenido del txt.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Botón iniciar presionado.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Leyendo el contenido ingresado.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Iniciando la operación.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Iniciando búsqueda booleana de un valor en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Verificando la existencia del valor 5 dentro del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Evaluando si es necesario sobreescribir la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Sobreescribiendo la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Iniciando búsqueda recursiva.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Valor nulo, búsqueda cancelada.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Inicio de una inserción de dato normal en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dato agregado en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Se esta evaluando agregar el valor 5 al árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Se inicia una insserción balanceada de un nuevo valor.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  El nodo no existe.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Sobreescribiendo la inserción para evitar el equilibrado.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Iniciando inserción no balanceada.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Verificando si el árbol binario esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Se ha detectado que el árbol esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo el panel mostrador.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Se ha detectado que el árbol esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo el panel mostrador.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posiciones.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posiciones.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Iniciando búsqueda booleana de un valor en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Verificando la existencia del valor 3 dentro del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Valor encontrado.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Buscando en el subárbol izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Evaluando si es necesario sobreescribir la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:56 |  Sobreescribiendo la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando búsqueda recursiva.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Buscando recursivamente el valor en el subarbol izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando búsqueda recursiva.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Valor nulo, búsqueda cancelada.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Inicio de una inserción de dato normal en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dato agregado en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta evaluando agregar el valor 3 al árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se inicia una insserción balanceada de un nuevo valor.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Moviendo el puntero hacia la izquierda del nodo 5.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se inicia una insserción balanceada de un nuevo valor.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  El nodo no existe.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Estableciendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se actualiza la altura del nodo insertado.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando la altura del nodo arbol.Nodo@337ed561
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando la altura del nodo null
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Estableciendo altura.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo factor de balance.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando el balance del nodo arbol.Nodo@337f4e0e
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando la altura del nodo arbol.Nodo@337ed561
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando la altura del nodo null
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Sobreescribiendo la inserción para evitar el equilibrado.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando inserción no balanceada.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Buscando insertar el nuevo valor en el subárbol izquierdo de forma no equilibrada.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando inserción no balanceada.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Estableciendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Verificando si el árbol binario esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se ha detectado que el árbol esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo el panel mostrador.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se ha detectado que el árbol esta vacío.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo el panel mostrador.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posiciones.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posiciones.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando tamaño del surbárbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando posición.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando búsqueda booleana de un valor en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Verificando la existencia del valor 51 dentro del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Valor encontrado.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dibujando árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Buscando en el subárbol derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Evaluando si es necesario sobreescribir la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Sobreescribiendo la búsqueda.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando búsqueda recursiva.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Buscando recursivamente el valor en el subarbol derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Iniciando búsqueda recursiva.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Valor nulo, búsqueda cancelada.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Inicio de una inserción de dato normal en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Dato agregado en árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta evaluando agregar el valor 51 al árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se inicia una insserción balanceada de un nuevo valor.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo dato.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Moviendo el puntero hacia la derecha del nodo 5.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se inicia una insserción balanceada de un nuevo valor.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  El nodo no existe.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Estableciendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se actualiza la altura del nodo insertado.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Se esta calculando la altura del nodo arbol.Nodo@337ed561
+                     Guatemala                    | 23-03-2025 | 17:37:57 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Se esta calculando la altura del nodo arbol.Nodo@767c4d6a
+                     Guatemala                    | 23-03-2025 | 17:37:58 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:37:59 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:37:59 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:37:59 |  Estableciendo altura.
+                     Guatemala                    | 23-03-2025 | 17:38:00 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:38:00 |  Obteniendo factor de balance.
+                     Guatemala                    | 23-03-2025 | 17:38:00 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:01 |  Se esta calculando el balance del nodo arbol.Nodo@337f4e0e
+                     Guatemala                    | 23-03-2025 | 17:38:02 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:02 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:38:03 |  Obteniendo la raíz del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:04 |  Se esta calculando la altura del nodo arbol.Nodo@337ed561
+                     Guatemala                    | 23-03-2025 | 17:38:04 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:05 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:38:05 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:38:07 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:38:09 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:10 |  Se esta calculando la altura del nodo arbol.Nodo@767c4d6a
+                     Guatemala                    | 23-03-2025 | 17:38:12 |  Obteniendo nodo izquierdo.
+                     Guatemala                    | 23-03-2025 | 17:38:15 |  Obteniendo altura.
+                     Guatemala                    | 23-03-2025 | 17:38:18 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:38:22 |  Sobreescribiendo la inserción para evitar el equilibrado.
+                     Guatemala                    | 23-03-2025 | 17:38:25 |  Obteniendo nodo derecho.
+                     Guatemala                    | 23-03-2025 | 17:38:29 |  Iniciando inserción no balanceada.
+                     Guatemala                    | 23-03-2025 | 17:38:32 |  Calculando limites del árbol.
+                     Guatemala                    | 23-03-2025 | 17:49:38 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:49:38 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:49:38 |  Iniciando el programa.
+                     Guatemala                    | 23-03-2025 | 17:59:26 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:59:26 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 17:59:26 |  Iniciando el programa.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Iniciando el programa.

@@ -77,6 +77,9 @@ public class BitacoraAplicación {
                 // Escribir en el archivo
                 linea.println("                     Ubicación                    |    Fecha   |   Hora   |           Actividad");
                 linea.println(nuevalinea);
+                txa.setText("                     Ubicación                    |    Fecha   |   Hora   |           Actividad \n");
+                txa.setText(txa.getText() + nuevalinea + "\n");
+                txa.setCaretPosition(txa.getDocument().getLength());
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
@@ -88,17 +91,17 @@ public class BitacoraAplicación {
                 linea = new PrintWriter(escritor);
                 // Escribir en el archivo
                 linea.println(nuevalinea);
+                txa.setText(txa.getText() + nuevalinea + "\n");
+           txa.setCaretPosition(txa.getDocument().getLength());
                 linea.close();
                 escritor.close();
             } catch (IOException e) {
                 System.out.println("" + e);
             }
         }
-        
-        leerbitacora(txa);
     }
     
-    public static void leerbitacora(JTextArea txa){
+        public static void leerbitacora(){
         FileReader archivo;
         BufferedReader lector;
         String linea, contenido;
@@ -113,17 +116,12 @@ public class BitacoraAplicación {
            }
            lector.close();
            
-           // Mostrar la primera línea sin cambios
-            if (!lineas.isEmpty()) {
-                contenido += lineas.get(0) + "\n"; // Primera línea igual
-            }
-
-            // Invertir las demás líneas y agregarlas
-            for (int i = lineas.size() - 1; i > 0; i--) {
-                contenido += lineas.get(i) + "\n"; // Añadir las líneas invertidas
+            for (int i = 0; i < lineas.size(); i++) {
+                contenido += lineas.get(i) + "\n";
             }
             
            txa.setText(contenido);
+           txa.setCaretPosition(txa.getDocument().getLength());
         }
          
         }catch(IOException e){

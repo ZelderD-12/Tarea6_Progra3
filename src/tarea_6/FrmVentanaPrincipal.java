@@ -20,13 +20,14 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     public FrmVentanaPrincipal() {
         initComponents();
+        BitacoraAplicación.agregartextarea(txabitacora);
+        BitacoraAplicación.leerbitacora();
         this.setTitle("Arbol no Equilibrado y Equilibrado");
         simuladorBinario = new SimuladorArbolBinario();
         simuladorAVL = new SimuladorArbolBinario();
         txaNumeros.setEditable(false);
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
-        BitacoraAplicación.agregartextarea(txabitacora);
         BitacoraAplicación.agregaraccion("Iniciando el programa.");
         
     }
@@ -83,9 +84,11 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txabitacora = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout panelAVLLayout = new javax.swing.GroupLayout(panelAVL);
@@ -101,13 +104,13 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         srcollAVL.setViewportView(panelAVL);
 
-        jPanel1.add(srcollAVL, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 430, 240));
+        jPanel1.add(srcollAVL, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 430, 230));
 
         txtOrdenamientos.setColumns(20);
         txtOrdenamientos.setRows(5);
         jScrollPane2.setViewportView(txtOrdenamientos);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 380, 110));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 380, 110));
 
         javax.swing.GroupLayout panelBinario1Layout = new javax.swing.GroupLayout(panelBinario1);
         panelBinario1.setLayout(panelBinario1Layout);
@@ -122,101 +125,134 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         srcollBinario1.setViewportView(panelBinario1);
 
-        jPanel1.add(srcollBinario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 430, 240));
+        jPanel1.add(srcollBinario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 430, 220));
 
+        btnstart.setBackground(new java.awt.Color(255, 204, 51));
+        btnstart.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnstart.setForeground(new java.awt.Color(102, 51, 0));
         btnstart.setText("Start");
         btnstart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnstartActionPerformed(evt);
             }
         });
-        jPanel1.add(btnstart, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 120, 50));
+        jPanel1.add(btnstart, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 120, 30));
 
+        btnstop.setBackground(new java.awt.Color(255, 204, 51));
+        btnstop.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnstop.setForeground(new java.awt.Color(102, 51, 0));
         btnstop.setText("Stop");
         btnstop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnstopActionPerformed(evt);
             }
         });
-        jPanel1.add(btnstop, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 120, 50));
-        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 120, -1));
+        jPanel1.add(btnstop, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 120, 30));
+        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 120, -1));
 
         txaNumeros.setColumns(20);
         txaNumeros.setRows(5);
         jScrollPane1.setViewportView(txaNumeros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 150, 200));
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setText("Bitácora");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, -1, -1));
 
+        btnTXT.setBackground(new java.awt.Color(255, 204, 51));
+        btnTXT.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnTXT.setForeground(new java.awt.Color(102, 51, 0));
         btnTXT.setText("Subir TXT");
         btnTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTXTActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 110, 40));
+        jPanel1.add(btnTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 110, 40));
 
+        btnDB.setBackground(new java.awt.Color(255, 204, 51));
+        btnDB.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnDB.setForeground(new java.awt.Color(102, 51, 0));
         btnDB.setText("Cargar DB");
         btnDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDBActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 110, 40));
+        jPanel1.add(btnDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 110, 40));
 
+        BtnEliminar.setBackground(new java.awt.Color(255, 102, 102));
+        BtnEliminar.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        BtnEliminar.setForeground(new java.awt.Color(102, 51, 0));
         BtnEliminar.setText("Eliminar");
         BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, -1, -1));
+        jPanel1.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 120, 30));
 
+        BtnAgregar.setBackground(new java.awt.Color(153, 153, 255));
+        BtnAgregar.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        BtnAgregar.setForeground(new java.awt.Color(102, 51, 0));
         BtnAgregar.setText("Insertar");
         BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, -1));
+        jPanel1.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, 30));
 
+        BtnBuscar.setBackground(new java.awt.Color(153, 153, 255));
+        BtnBuscar.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        BtnBuscar.setForeground(new java.awt.Color(102, 51, 0));
         BtnBuscar.setText("Buscar");
         BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 80, -1));
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, 30));
 
         txtarearepetidos.setColumns(20);
         txtarearepetidos.setRows(5);
         jScrollPane3.setViewportView(txtarearepetidos);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 170, 200));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 170, 200));
 
-        jLabel2.setText("Repetidos:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 70, -1));
+        jLabel2.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 51, 0));
+        jLabel2.setText("Numeros Repetidos");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 170, -1));
 
+        btnseleccionado.setBackground(new java.awt.Color(255, 204, 51));
+        btnseleccionado.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnseleccionado.setForeground(new java.awt.Color(102, 51, 0));
         btnseleccionado.setText("AVL");
         btnseleccionado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnseleccionadoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnseleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 110, -1));
+        jPanel1.add(btnseleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 110, -1));
 
+        btnRecorridos.setBackground(new java.awt.Color(255, 204, 51));
+        btnRecorridos.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        btnRecorridos.setForeground(new java.awt.Color(102, 51, 0));
         btnRecorridos.setText("Recorridos");
         btnRecorridos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRecorridosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 310, -1));
+        jPanel1.add(btnRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 310, -1));
 
+        jLabel3.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 51, 0));
         jLabel3.setText("Arbol Seleccionado:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, -1, -1));
 
         txabitacora.setEditable(false);
         txabitacora.setColumns(20);
@@ -226,14 +262,24 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 1029, 210));
 
-        jLabel4.setText("Números:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 51, 0));
+        jLabel4.setText("Listado de numeros");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 150, -1));
+
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 3, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 51, 0));
+        jLabel5.setText("Árboles");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,6 +539,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
