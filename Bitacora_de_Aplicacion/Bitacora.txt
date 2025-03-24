@@ -441,3 +441,6 @@
                      Guatemala                    | 23-03-2025 | 17:59:26 |  Inicializando el árbol binario.
                      Guatemala                    | 23-03-2025 | 17:59:26 |  Inicializando el árbol binario.
                      Guatemala                    | 23-03-2025 | 17:59:26 |  Iniciando el programa.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Inicializando el árbol binario.
+                     Guatemala                    | 23-03-2025 | 18:05:02 |  Iniciando el programa.
