@@ -269,7 +269,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Britannic Bold", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 51, 0));
-        jLabel5.setText("Arboles");
+        jLabel5.setText("Árboles");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
