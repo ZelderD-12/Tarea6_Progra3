@@ -1,6 +1,5 @@
 package tarea_6;
 
-
 import arbol.SimuladorArbolBinario;
 import java.awt.Color;
 import static java.awt.SystemColor.control;
@@ -9,14 +8,14 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
+
 public class FrmVentanaPrincipal extends javax.swing.JFrame {
-   
+
     private SimuladorArbolBinario simuladorBinario; // Árbol binario
     private SimuladorArbolBinario simuladorAVL;     // Árbol AVL 
     private ArrayList<Integer> numeros;
     private Control controlador; // Controlador para manejar el hilo
-     String ArbolSeleccionado = "AVL";
-
+    String ArbolSeleccionado = "AVL";
 
     public FrmVentanaPrincipal() {
         initComponents();
@@ -29,9 +28,9 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
         txaNumeros.setBackground(Color.WHITE);
         txaNumeros.setForeground(Color.BLACK);
         BitacoraAplicación.agregaraccion("Iniciando el programa.");
-        
+
     }
-    
+
     private ArrayList<Integer> leerNumerosDeTextArea(JTextArea textArea) {
         ArrayList<Integer> numeros = new ArrayList<>();
         String texto = textArea.getText(); // Obtiene el texto del TextArea
@@ -52,7 +51,7 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         return numeros;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -292,14 +291,14 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
     private void btnstartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartActionPerformed
         BitacoraAplicación.agregaraccion("Botón iniciar presionado.");
         BitacoraAplicación.agregaraccion("Leyendo el contenido ingresado.");
-        numeros = leerNumerosDeTextArea(txaNumeros); 
+        numeros = leerNumerosDeTextArea(txaNumeros);
         if (controlador != null && controlador.isAlive()) {
             BitacoraAplicación.agregaraccion("Contenido nulo.");
-            controlador.detener(); 
+            controlador.detener();
         }
-        controlador = new Control(numeros, srcollAVL, panelAVL,srcollBinario1,panelBinario1,txtarearepetidos); 
+        controlador = new Control(numeros, srcollAVL, panelAVL, srcollBinario1, panelBinario1, txtarearepetidos);
         BitacoraAplicación.agregaraccion("Iniciando la operación.");
-        controlador.start(); 
+        controlador.start();
     }//GEN-LAST:event_btnstartActionPerformed
 
     private void btnstopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstopActionPerformed
@@ -320,11 +319,11 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             File archivo = fileChooser.getSelectedFile();
-            
+
             try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
                 String linea;
                 StringBuilder contenido = new StringBuilder();
-                
+
                 while ((linea = br.readLine()) != null) {
                     contenido.append(linea).append("\n");
                 }
@@ -339,126 +338,137 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
 
     private void btnDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBActionPerformed
         // TODO add your handling code here:
-        // Método para solicitar datos obligatorios
-        BitacoraAplicación.agregaraccion("Búsqueda de base de datos iniciada.");
-        BitacoraAplicación.agregaraccion("Ingresando el HOST.");
-        String host = solicitarDato("Ingrese el host:");
-        BitacoraAplicación.agregaraccion("Ingresando el puerto.");
-        String puerto = solicitarDato("Ingrese el PUERTO:");
-        BitacoraAplicación.agregaraccion("Ingresando el usuario.");
-        String user = solicitarDato("Ingrese el USER:");
-        BitacoraAplicación.agregaraccion("Ingresando la contraseña.");
-        String password = solicitarDato("Ingrese el PASSWORD:");
-        BitacoraAplicación.agregaraccion("Ingresando el nombre de la base de datos.");
-        String nombreBD = solicitarDato("Ingrese el Nombre de la BD:");
-        BitacoraAplicación.agregaraccion("Ingresando el nombre de la tabla dentro de la base de datos.");
-        String nombreTabla = solicitarDato("Ingrese el Nombre de la Tabla:");
-        BitacoraAplicación.agregaraccion("Ingresando el nombre de la columa dentro de la tabla.");
-        String nombreColumna = solicitarDato("Ingrese el Nombre de la Columna:");
-
-        // Construimos la URL de conexión
-        BitacoraAplicación.agregaraccion("Construyendo la cadena de conexión a BD.");
-        String url = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD;
-        
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Obtener datos con verificación de cancelación
+            String host = solicitarDato("Ingrese el HOST:");
+            if (host == null) {
+                return; // Si se canceló, salir inmediatamente
+            }
+            String puerto = solicitarDato("Ingrese el PUERTO:");
+            if (puerto == null) {
+                return;
+            }
+
+            String user = solicitarDato("Ingrese el USER:");
+            if (user == null) {
+                return;
+            }
+
+            String password = solicitarDato("Ingrese el PASSWORD:");
+            if (password == null) {
+                return;
+            }
+
+            String nombreBD = solicitarDato("Ingrese el Nombre de la BD:");
+            if (nombreBD == null) {
+                return;
+            }
+
+            String nombreTabla = solicitarDato("Ingrese el Nombre de la Tabla:");
+            if (nombreTabla == null) {
+                return;
+            }
+
+            String nombreColumna = solicitarDato("Ingrese el Nombre de la Columna:");
+            if (nombreColumna == null) {
+                return;
+            }
+
+            // Construcción de la URL de conexión
+            String url = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD + "?useSSL=false&serverTimezone=UTC";
+
             // Intentamos conectar a la base de datos
             Connection con = DriverManager.getConnection(url, user, password);
-            
             JOptionPane.showMessageDialog(this, "CONEXIÓN EXITOSA", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            BitacoraAplicación.agregaraccion("La conexión ha sido exitosa.");
-            // Ejecutamos la consulta para obtener los datos de la columna
-            BitacoraAplicación.agregaraccion("Creación de la consulta SQL.");
+
+            // Ejecutamos la consulta
             String query = "SELECT " + nombreColumna + " FROM " + nombreTabla;
-            BitacoraAplicación.agregaraccion("Ejecutando la consulta SQL.");
             Statement stmt = con.createStatement();
-            BitacoraAplicación.agregaraccion("Llenando la tabla temporal con los resultados de la consulta SQL.");
             ResultSet rs = stmt.executeQuery(query);
-            
-            // Construimos el texto para el JTextArea
+
+            // Mostrar datos en el JTextArea
             StringBuilder datos = new StringBuilder();
             while (rs.next()) {
                 datos.append(rs.getString(1)).append("\n");
             }
-
-            // Mostramos los datos en el JTextArea
-           BitacoraAplicación.agregaraccion("Enviando los datos a la interfaz gráfica.");
             txaNumeros.setText(datos.toString());
 
-            // Cerramos la conexión
-            BitacoraAplicación.agregaraccion("Cerrando la tabla temporal.");
+            // Cerrar conexiones
             rs.close();
             stmt.close();
-            BitacoraAplicación.agregaraccion("Cerrando la conexión.");
             con.close();
 
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(this, "Error: No se encontró el driver JDBC de MySQL.", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException e) {
-            BitacoraAplicación.agregaraccion("No se pudo conectar a la BD.");
             JOptionPane.showMessageDialog(this, "Error al conectar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnDBActionPerformed
 
     private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
-      if (txtcantidad.getText().trim().isEmpty()) {
-          BitacoraAplicación.agregaraccion("Se detecta una inserción nula.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        if (txtcantidad.getText().trim().isEmpty()) {
+            BitacoraAplicación.agregaraccion("Se detecta una inserción nula.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    try {
-        int numero = Integer.parseInt(txtcantidad.getText().trim());
-        BitacoraAplicación.agregaraccion("Empezando la inserción.");
-        // Llama al método insertar de la clase Control
-        controlador.insertar(numero);
+        try {
+            int numero = Integer.parseInt(txtcantidad.getText().trim());
+            BitacoraAplicación.agregaraccion("Empezando la inserción.");
+            // Llama al método insertar de la clase Control
+            controlador.insertar(numero);
 
-        txtcantidad.setText("");
-    } catch (NumberFormatException e) {
-        BitacoraAplicación.agregaraccion("Número inválido.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+            txtcantidad.setText("");
+        } catch (NumberFormatException e) {
+            BitacoraAplicación.agregaraccion("Número inválido.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BtnAgregarActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-         if (txtcantidad.getText().trim().isEmpty()) {
-             BitacoraAplicación.agregaraccion("Se detecta una eliminación nula.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        if (txtcantidad.getText().trim().isEmpty()) {
+            BitacoraAplicación.agregaraccion("Se detecta una eliminación nula.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    try {
-        int numero = Integer.parseInt(txtcantidad.getText().trim());
-        BitacoraAplicación.agregaraccion("Empezando la eliminación.");
-        // Llama al método eliminar de la clase Control
-        controlador.eliminar(numero);
+        try {
+            int numero = Integer.parseInt(txtcantidad.getText().trim());
+            BitacoraAplicación.agregaraccion("Empezando la eliminación.");
+            // Llama al método eliminar de la clase Control
+            controlador.eliminar(numero);
 
-        txtcantidad.setText("");
-    } catch (NumberFormatException e) {
-        BitacoraAplicación.agregaraccion("Valor inválido.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+            txtcantidad.setText("");
+        } catch (NumberFormatException e) {
+            BitacoraAplicación.agregaraccion("Valor inválido.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
-       if (txtcantidad.getText().trim().isEmpty()) {
-           BitacoraAplicación.agregaraccion("Se detecta una búsqueda nula.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        if (txtcantidad.getText().trim().isEmpty()) {
+            BitacoraAplicación.agregaraccion("Se detecta una búsqueda nula.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    try {
-        int numero = Integer.parseInt(txtcantidad.getText().trim());
-        BitacoraAplicación.agregaraccion("Empezando la búsqueda.");
-        // Llama al método buscar de la clase Control
-        String resultado = controlador.buscar(numero);
+        try {
+            int numero = Integer.parseInt(txtcantidad.getText().trim());
+            BitacoraAplicación.agregaraccion("Empezando la búsqueda.");
+            // Llama al método buscar de la clase Control
+            String resultado = controlador.buscar(numero);
 
-        // Muestra el resultado en un cuadro de diálogo
-        BitacoraAplicación.agregaraccion("Fin de la búsqueda.");
-        JOptionPane.showMessageDialog(this, resultado, "Resultado de la búsqueda", JOptionPane.INFORMATION_MESSAGE);
+            // Muestra el resultado en un cuadro de diálogo
+            BitacoraAplicación.agregaraccion("Fin de la búsqueda.");
+            JOptionPane.showMessageDialog(this, resultado, "Resultado de la búsqueda", JOptionPane.INFORMATION_MESSAGE);
 
-        txtcantidad.setText("");
-    } catch (NumberFormatException e) {
-        BitacoraAplicación.agregaraccion("Número inválido.");
-        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+            txtcantidad.setText("");
+        } catch (NumberFormatException e) {
+            BitacoraAplicación.agregaraccion("Número inválido.");
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido en el campo.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
     private void btnseleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionadoActionPerformed
@@ -467,29 +477,38 @@ public class FrmVentanaPrincipal extends javax.swing.JFrame {
             BitacoraAplicación.agregaraccion("Creando árbol AVL.");
             ArbolSeleccionado = "BinarioNoEquilibrado";
             System.out.println(ArbolSeleccionado);
-        }
-        else{
+        } else {
             BitacoraAplicación.agregaraccion("Creando árbol binario.");
-             btnseleccionado.setText("AVL");
+            btnseleccionado.setText("AVL");
             ArbolSeleccionado = "AVL";
             System.out.println(ArbolSeleccionado);
         }
     }//GEN-LAST:event_btnseleccionadoActionPerformed
 
     private void btnRecorridosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecorridosActionPerformed
-      BitacoraAplicación.agregaraccion("Iniciando recorridos.");
+        BitacoraAplicación.agregaraccion("Iniciando recorridos.");
         controlador.escribirRecorridos(txtOrdenamientos, ArbolSeleccionado);
     }//GEN-LAST:event_btnRecorridosActionPerformed
 
-    // Método para solicitar datos y evitar valores vacíos
     private String solicitarDato(String mensaje) {
-        String dato;
-        do {
+        String dato = JOptionPane.showInputDialog(null, mensaje, "Conexión a la Base de Datos", JOptionPane.QUESTION_MESSAGE);
+
+        // Si el usuario presiona "Cancelar" o cierra la ventana, se interrumpe la solicitud
+        if (dato == null) {
+            return null; // Devuelve null para cancelar la operación
+        }
+
+        // Si el usuario deja el campo vacío, seguir pidiendo el dato
+        while (dato.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Este campo es obligatorio. Intente de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
             dato = JOptionPane.showInputDialog(null, mensaje, "Conexión a la Base de Datos", JOptionPane.QUESTION_MESSAGE);
-            if (dato == null || dato.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Este campo es obligatorio. Intente de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
+
+            // Si el usuario cancela en el segundo intento, salir
+            if (dato == null) {
+                return null;
             }
-        } while (dato == null || dato.trim().isEmpty());
+        }
+
         return dato;
     }
 

@@ -32028,3 +32028,45 @@
                      Guatemala                    | 23-03-2025 | 18:39:38 |  Obteniendo nodo derecho.
                      Guatemala                    | 23-03-2025 | 18:39:38 |  Calculando limites del árbol.
                      Guatemala                    | 23-03-2025 | 18:39:38 |  Obteniendo la raíz del árbol.
+                      México                      | 23-03-2025 | 20:44:12 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:44:12 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:44:12 |  Iniciando el programa.
+                      México                      | 23-03-2025 | 20:44:14 |  Búsqueda de base de datos iniciada.
+                      México                      | 23-03-2025 | 20:44:14 |  Ingresando el HOST.
+                      México                      | 23-03-2025 | 20:44:31 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:44:31 |  Iniciando el programa.
+                      México                      | 23-03-2025 | 20:44:31 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:44:32 |  Búsqueda de base de datos iniciada.
+                      México                      | 23-03-2025 | 20:44:32 |  Ingresando el HOST.
+                      México                      | 23-03-2025 | 20:45:18 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:45:18 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:45:18 |  Iniciando el programa.
+                      México                      | 23-03-2025 | 20:45:20 |  Búsqueda de base de datos iniciada.
+                      México                      | 23-03-2025 | 20:45:20 |  Ingresando el HOST.
+                      México                      | 23-03-2025 | 20:45:21 |  Ingresando el puerto.
+                      México                      | 23-03-2025 | 20:45:23 |  Ingresando el usuario.
+                      México                      | 23-03-2025 | 20:45:24 |  Ingresando la contraseña.
+                      México                      | 23-03-2025 | 20:45:25 |  Ingresando el nombre de la base de datos.
+                      México                      | 23-03-2025 | 20:45:27 |  Ingresando el nombre de la tabla dentro de la base de datos.
+                      México                      | 23-03-2025 | 20:45:27 |  Ingresando el nombre de la columa dentro de la tabla.
+                      México                      | 23-03-2025 | 20:45:28 |  Construyendo la cadena de conexión a BD.
+                      México                      | 23-03-2025 | 20:45:28 |  No se pudo conectar a la BD.
+                      México                      | 23-03-2025 | 20:46:43 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:46:43 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:46:43 |  Iniciando el programa.
+                      México                      | 23-03-2025 | 20:46:45 |  Búsqueda de base de datos iniciada.
+                      México                      | 23-03-2025 | 20:46:45 |  Ingresando el HOST.
+                      México                      | 23-03-2025 | 20:46:46 |  Ingresando el puerto.
+                      México                      | 23-03-2025 | 20:46:48 |  Ingresando el usuario.
+                      México                      | 23-03-2025 | 20:46:49 |  Ingresando la contraseña.
+                      México                      | 23-03-2025 | 20:46:50 |  Ingresando el nombre de la base de datos.
+                      México                      | 23-03-2025 | 20:46:50 |  Ingresando el nombre de la tabla dentro de la base de datos.
+                      México                      | 23-03-2025 | 20:46:51 |  Ingresando el nombre de la columa dentro de la tabla.
+                      México                      | 23-03-2025 | 20:46:52 |  Construyendo la cadena de conexión a BD.
+                      México                      | 23-03-2025 | 20:46:52 |  No se pudo conectar a la BD.
+                      México                      | 23-03-2025 | 20:48:07 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:48:07 |  Iniciando el programa.
+                      México                      | 23-03-2025 | 20:48:07 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:49:51 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:49:51 |  Inicializando el árbol binario.
+                      México                      | 23-03-2025 | 20:49:51 |  Iniciando el programa.
